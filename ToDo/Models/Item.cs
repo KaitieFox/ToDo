@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -15,7 +16,9 @@ namespace ToDo.Models
         public string Details { get; set; }
         public bool IsDone { get; set; }
 
-
+        [ForeignKey("List")] //references the class we are linking with the foreignkey
+        public int ListID { get; set; }
+        public virtual List List { get; set; }
 
     }
 }
