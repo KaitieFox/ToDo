@@ -17,8 +17,8 @@ namespace ToDo.Models
         public bool IsDone { get; set; }
 
         [ForeignKey("List")] //references the class we are linking with the foreignkey
-        public int ListID { get; set; }
-        public virtual List List { get; set; }
+        public int ListID { get; set; } //doesn't need to match name-wise
+        public virtual List List { get; set; } //this element is for efficiency
 
     }
 }
